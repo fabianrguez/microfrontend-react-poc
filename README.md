@@ -2,7 +2,7 @@
 
 This is a microfronted POC using React and ModuleFederationWebpack plugin.
 
-## Architecture
+## Architecture
 
 Shell App
   - App1: Exposed App1 component and Button component
