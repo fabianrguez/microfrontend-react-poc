@@ -35,8 +35,9 @@ module.exports = {
     new ModuleFederationPlugin({
       name: 'Shell',
       remotes: {
-        App1: 'App1@http://localhost:4000/moduleEntry.js',
-        App2: 'App2@http://localhost:5000/moduleEntry.js',
+        App1: 'App1@http://localhost:3001/moduleEntry.js',
+        App2: 'App2@http://localhost:3002/moduleEntry.js',
+        VueRemote: 'VueRemote@http://localhost:3003/moduleEntry.js'
       },
       shared: {
         ...dependencies,

@@ -1,6 +1,8 @@
-import './App.css';
 import React, { lazy } from 'react';
+import { mount as VueApp } from 'VueRemote/VueApp';
+import './App.css';
 import { RemoteWrapper } from './components/RemoteWrapper';
+import VueComponent from './components/VueComponent';
 const RemoteApp1 = lazy(() => import('App1/App1'));
 const RemoteApp1Button = lazy(() => import('App1/App1Button'));
 lazy(import('App2/App2'));
@@ -16,11 +18,16 @@ function App() {
           <RemoteApp1 />
         </RemoteWrapper>
         <RemoteWrapper>
-          <RemoteApp1Button />
-          <RemoteApp1Button label="Label changed from shell App" />
+          <div className="container">
+            <RemoteApp1Button />
+            <RemoteApp1Button label="Label changed from shell App" />
+          </div>
         </RemoteWrapper>
         <RemoteWrapper>
           <mcf-app2></mcf-app2>
+        </RemoteWrapper>
+        <RemoteWrapper>
+          <VueComponent component={VueApp} />
         </RemoteWrapper>
       </main>
     </div>
